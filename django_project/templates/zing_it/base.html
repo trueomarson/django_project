@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% block css %} {% endblock %}
+    <title>{% block title %} {% endblock %} </title>
+</head>
+
+<body>
+    <div>
+        <ul style="list-style-type: none;float: right;font-size: large;">
+            <li style="display:inline"><a href="{% url 'home' %}">Home</a></li>
+            <li style="display:inline"><a href="{% url 'about' %}">About</a></li>
+            <li style="display:inline"><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% if user.is_authenticated %}
+            <li style="display:inline"><a href="{% url 'home' %}">Logout</a></li>
+            {% else %}
+            <li style="display:inline"><a href="{% url 'login' %}">Login</a></li>
+            {% endif%}
+
+        </ul>
+    </div>
+    <h1 id="title"> {% block heading %} {% endblock %} </h1>
+    <div id="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+
+</html>

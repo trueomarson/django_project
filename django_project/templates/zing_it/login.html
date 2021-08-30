@@ -1,0 +1,37 @@
+{% extends "zing_it/base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'zing_it/css/songs.css' %}" /> {% endblock %}
+
+{% extends "zing_it/base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'zing_it/css/songs.css' %}" /> {% endblock %}
+
+{% block title %} Login {% endblock %}
+
+{% block heading %}
+<center>Login</center>
+{% endblock %}
+
+{% block content%}
+
+
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+
+    <input type="submit" name="btn" value="login">
+</form>
+<br>
+<b><span>{{status}}</span></b>
+
+
+{% endblock %}
