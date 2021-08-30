@@ -9,6 +9,8 @@ from .forms import Signup, Login, Edit
 
 from .models import Song, Playlist
 
+# Create your views here.
+
 
 my_songs = [
     {"id": 1, "Track": "thank u, next", "Artist": "Ariana Grande",

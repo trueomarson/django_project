@@ -14,16 +14,16 @@
 {% block content%}
 
 <div class="box">
-    {% for playlist in my_playlists%}
+    {% for playlist in my_playlists %}
     <div class="card">
-        <a href="{% url 'playlist' playlist.id  %}">
+        <a href="{ % url 'playlist' playlist.id  %}">
             <div class="imgBx">
                 <img src="{% static 'zing_it/images/music.jpg' %}" alt="images">
             </div>
             <div class="details">
-                <h2>{{playlist.name}}
+                <h2>{{ playlist.name }}
                     <br>
-                    <span>{{playlist.number_of_songs}}</span>
+                    <span>{{ playlist.number_of_songs }}</span>
                 </h2>
             </div>
         </a>
